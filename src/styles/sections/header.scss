@@ -1,0 +1,169 @@
+.header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 50px 0;
+
+    @media(max-width: 545px) {
+        padding: 20px 0;
+    }
+
+    &-container {
+        display: flex;
+        align-items: center;
+
+        @media(max-width: 545px) {
+            justify-content: space-between;
+        }
+    }
+
+    &-logo {
+        margin-right: 110px;
+
+        @media(max-width: 375px) {
+            margin-right: 0;
+            height: 32px;
+        }
+    }
+
+    &-nav {
+        display: flex;
+        column-gap: 40px;
+
+        @media (max-width: 545px) {
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 20px;
+        }
+
+        &-item {
+
+            &__link {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &-link {
+        @media(max-width: 959px) {
+            display: none;
+        }
+    }
+
+    &-burger {
+        display: none;
+        @extend %font-400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $metallic_bronze;
+
+        @media(max-width: 545px) {
+            display: block;
+        }
+    }
+
+}
+
+.burger-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    @media (max-width: 545px) {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+        padding: 25px;
+        width: 60%;
+        height: 100vh;
+        background-color: $derby;
+        z-index: 1;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60vw;
+        height: 100vh;
+        background: rgba(255, 237, 216, 0.15);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+
+    &__text {
+        display: none;
+        margin-bottom: 30px;
+        @extend %font-400;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $metallic_bronze;
+
+        @media(max-width: 545px) {
+            display: block;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 16px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 1.5px;
+            background-color: $metallic_bronze;
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 1.5px;
+            background-color: $metallic_bronze;
+            transform: rotate(-45deg);
+        }
+
+        @media (max-width: 545px) {
+            display: flex;
+        }
+    }
+
+}
+
+.active {
+    display: flex;
+}
+
+.wine-card {
+    padding: 18px 60px;
+    border-radius: 57px;
+    width: 100%;
+    max-width: 320px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $bridal_heath;
+    text-align: center;
+    background-color: $metallic_bronze;
+    box-shadow: 0px 22px 80px rgba(167, 74, 42, 0.07), 0px 9.19107px 33.4221px rgba(134, 43, 11, 0.0503198), 0px 4.91399px 17.869px rgba(134, 43, 11, 0.0417275), 0px 2.75474px 10.0172px rgba(134, 43, 11, 0.035), 0px 1.46302px 5.32008px rgba(134, 43, 11, 0.0282725), 0px 0.608796px 2.21381px rgba(134, 43, 11, 0.0196802);
+
+    @media (max-width: 545px) {
+        max-width: 335px;
+    }
+}
+

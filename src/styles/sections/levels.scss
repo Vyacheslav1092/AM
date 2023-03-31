@@ -1,0 +1,263 @@
+#levels {
+
+    .levels-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 65px;
+
+        @media(max-width: 959px) {
+            flex-direction: column;
+            justify-content: unset;
+            margin-bottom: 60px;
+        }
+
+        &__title {
+            max-width: 660px;
+
+            @media(max-width: 959px) {
+                margin-bottom: 20px;
+                max-width: 600px;
+                text-align: center;
+            }
+
+            @media(max-width: 545px) {
+                max-width: 375px;
+            }
+        }
+
+        &__desc {
+            max-width: 340px;
+
+            @media(max-width: 959px) {
+                text-align: center;
+            }
+        }
+    }
+
+    .levels-cards {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 65px;
+
+        @media(max-width: 1139px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media(max-width: 545px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-item {
+            width: 100%;
+            max-width: 400px;
+
+            @media(max-width: 545px) {
+                max-width: 335px;
+            }
+
+            &:nth-child(1) {
+                .card-wrap::before {
+                    content: 'Кешбэк 5%';
+                    color: $cod_gray;
+                }
+            }
+
+            &:nth-child(2) {
+                .card-wrap::before {
+                    content: 'Кешбэк 7%';
+                    color: $metallic_bronze;
+                }
+
+                .card-wrap-bg g g path {
+                    fill: #D3731A;
+                }
+
+                .card-wrap-title path {
+                    fill: $metallic_bronze;
+                }
+
+                .card-text {
+                    max-width: 300px;
+                }
+            }
+
+            &:nth-child(3) {
+                .card-wrap::before {
+                    content: 'Кешбэк 10%';
+                    color: $bridal_heath;
+                }
+
+                .card-wrap-bg g g path {
+                    fill: #4d4d4d;
+                }
+
+                .card-wrap-title path {
+                    fill: $grandis;
+                }
+
+                .card-text {
+                    max-width: 320px;
+
+                    @media(max-width: 545px) {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
+    }
+
+    .levels-link {
+        display: block;
+
+        @media (max-width: 545px) {
+            margin: 0 auto;
+        }
+    }
+
+    .card {
+
+
+        &-wrap {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            border-radius: 19px;
+            margin-bottom: 30px;
+            padding: 30px;
+            min-height: 250px;
+            overflow: hidden;
+
+            @media(max-width: 545px) {
+                margin-bottom: 20px;
+                padding: 25px 25px 17px 25px;
+                min-height: 210px;
+            }
+
+            &::before {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+
+            &-bg {
+                position: absolute;
+                top: -105px;
+                right: -95px;
+
+                @media(max-width: 545px) {
+                    top: -85px;
+                    right: -75px;
+                    width: 278px;
+                    height: 310px;
+                }
+            }
+
+            &-title {
+                @media(max-width: 545px) {
+                    max-width: 157px;
+                }
+            }
+        }
+
+        &-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+
+            &__bold {
+                margin-right: 10px;
+                font-weight: 600;
+
+                @media(max-width: 545px) {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            &__shild {
+                border-radius: 50px;
+                padding: 5px 10px 6px 10px;
+                font-size: 12px;
+                line-height: 12px;
+
+                @media (max-width: 545px) {
+                    display: none;
+                }
+
+                &.shild-mob {
+                    display: none;
+
+                    @media (max-width: 545px) {
+                        display: block;
+                    }
+                }
+            }
+
+            &__info {
+                margin-left: auto;
+                width: 23px;
+                height: 23px;
+                background-image: url('#{$url}/img/dist/svg/info.svg');
+            }
+
+            &__popup {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 24px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                width: 91%;
+                max-width: 361px;
+                @extend %font-400;
+                font-size: 16px;
+                line-height: 20px;
+                color: $sandal;
+                background-color: $bridal_heath;
+                z-index: -1;
+                opacity: 0;
+                overflow: hidden;
+                transition: opacity .3s ease-in-out, z-index .3s ease-in-out, overflow .3s ease-in-out;
+
+                @media (max-width: 545px) {
+                    width: 100%;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    border-radius: 20px;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $derby;
+                    z-index: -1;
+                }
+            }
+        }
+
+        &-text {
+            margin-top: 0;
+        }
+    }
+
+    .active {
+        & .card-inner__info {
+            background-image: url('#{$url}/img/dist/svg/cross.svg');
+        }
+
+        & .card-inner__popup {
+            z-index: 1;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+}
+
+

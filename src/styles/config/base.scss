@@ -1,0 +1,197 @@
+$url: './..';
+
+// colors  -----------------------------------
+$white: #FFFFFF;
+$metallic_bronze: #55371B;
+$sun: #FBAD1D;
+$derby: #FFEDD8;
+$yellow_orange: #FFB737;
+$bridal_heath: #FFFBF4;
+$cod_gray: #111111;
+$grandis: #FFD895;
+$sandal: #9E8268;
+$sand_dune: #807262;
+
+// fonts -------------------------------------
+
+%font-400 {
+  font-family: 'Golos-400', sans-serif;
+  font-weight: 400;
+}
+
+%font-700 {
+  font-family: 'Ramillas-700', sans-serif;
+  font-weight: 700;
+}
+
+
+// typography --------------------------------
+// .h1 {
+//   @extend %font-700;
+//   font-size: 55px;
+//   line-height: 61px;
+
+//   @media (max-width: 1139px) {
+//     font-size: 44px;
+//     line-height: 54px;
+//   }
+
+//   @media (max-width: 959px) {
+//     font-size: 34px;
+//     line-height: 44px;
+//   }
+
+//   @media (max-width: 665px) {
+//     font-size: 24px;
+//     line-height: 34px;
+//   }
+// }
+
+.h2 {
+  @extend %font-700;
+  font-size: 64px;
+  line-height: 64px;
+
+  // @media (max-width: 1139px) {
+  //   font-size: 34px;
+  //   line-height: 44px;
+  // }
+
+  @media (max-width: 959px) {
+    font-size: 54px;
+    line-height: 54px;
+  }
+
+  @media (max-width: 545px) {
+    font-size: 34px;
+    line-height: 34px;
+  }
+}
+
+.h3 {
+  font-family: 'Golos-400', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 32px;
+
+  @media (max-width: 1139px) {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 959px) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  @media (max-width: 545px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+// .h4 {
+//   @extend %font-700;
+//   font-size: 20px;
+//   line-height: 28px;
+
+//   @media (max-width: 665px) {
+//     font-size: 14px;
+//     line-height: 21px;
+//   }
+// }
+
+
+// main element styles -----------------------
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  background: $bridal_heath;
+  @extend %font-400;
+  color: $metallic_bronze;
+  font-size: 20px;
+  line-height: 24px;
+  overflow-x: hidden;
+
+  @media(max-width: 545px) {
+    font-size: 16px;
+    line-height: 20px;         
+  }
+}
+
+section {
+  padding: 120px 0;
+
+  @media(max-width: 545px) {
+    padding: 80px 0;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (min-width: 545px) {
+    max-width: 580px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  
+  @media (min-width: 960px) {
+    max-width: 900px;
+  }
+
+  @media (min-width: 1140px) {
+    max-width: 1320px;
+  }
+}
+
+.bg {
+  background-color: $derby;
+}
+
+.bg-first {
+  background-color: $derby;
+}
+
+.first-color {
+  color: $cod_gray;
+}
+
+.bg-second {
+  background-color: $yellow_orange;
+}
+
+.second-color {
+  color: $metallic_bronze;
+}
+
+.bg-third {
+  background-color: $cod_gray;
+}
+
+.third-color {
+  color: $grandis;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
